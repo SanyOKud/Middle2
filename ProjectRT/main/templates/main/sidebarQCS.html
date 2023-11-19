@@ -1,0 +1,17 @@
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-3 col-lg-2 sidebar">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active {% if request.resolver_match.view_name == 'table_in' %}active{% endif %}" href="{% url 'table_in' %}">Список задач на проверку</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.resolver_match.view_name == 'table_out' %}active{% endif %}" href="{% url 'table_out' %}">Результаты проверок</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.resolver_match.view_name == 'user' %}active{% endif %}" href="{% url 'user_info' %}">Мой аккаунт</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>

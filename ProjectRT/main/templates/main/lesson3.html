@@ -10,58 +10,14 @@
 
 <body>
 <div class="container-fluid">
-    <form method="post">
-        {% csrf_token %}
-    <h3> Выберите цвет </h3>
-    {% for color in colors %}
-     <input type="radio" id="{{ color }}" name="colors" value="{{ forloop.counter }}">
-     <label for="{{ color }}"> {{ color }}</label> <br>
-    {% endfor %}
-    <br>
-    <input class="btn-danger" type="submit" value="Сохранить">
-    </form>
-</div>
-    <form method="post">
-        {% csrf_token %}
-        <label> Введите название товара: </label>
-        <input type="text" name="title">
-
-        <label> Введите цену </label>
-        <input type="text" name="price" >
-
-        <label> Введите кол-во </label>
-        <input type="number" name="quantity" min="1" max="100">
-
-        <input class="btn-danger" type="submit" value="Создать товар">
-    <table width="500px;" border="1px;">
-        <tr>
-            <th> Товар </th>
-            <th> Цена </th>
-            <th> Кол-во </th>
-            <th> Итого </th>
-        </tr>
-        <tr>
-            <td> {{ water.title }} </td>
-            <td> {{ water.price }}</td>
-            <td> {{ water.quantity }} </td>
-            <td> {{ water.amount }} </td>
-        </tr>
-        <tr>
-            <td> {{ chocolate.title }} </td>
-            <td> {{ chocolate.price }}</td>
-            <td> {{ chocolate.quantity }} </td>
-            <td> {{ chocolate.amount }} </td>
-        </tr>
-    </table>
-    <br>
     <div class="row">
         <div class="col-md-3" style="background-color: #7700ff">
             <h4>{{ 'Боковое меню' |ladder }}</h4>
             <div class="row">
                 <div class="col-md-2" style="background-color: white">
-                    <i class="fa-solid fa-house"></i>
+                    <h1>☺</h1>
                 </div>
-                <div> class="col-md-9">
+                <div class="col-md-9">
                     <h1>Название</h1>
                 </div>
             </div>
@@ -90,6 +46,10 @@
             <img src="https://memepedia.ru/wp-content/uploads/2016/03/monah_31340477_orig_.jpeg">
         </div>
     </div>
-    </form>
+</div>
+
+
+
+
 </body>
 </html>

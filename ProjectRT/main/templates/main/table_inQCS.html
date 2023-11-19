@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Портал QCS</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Здесь вы можете добавить свои пользовательские стили */
+    body {
+      padding-top: 5rem;
+    }
+    .sidebar {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      padding-top: 5rem;
+      background-color: #f8f9fa;
+      padding-right: 2rem;
+    }
+    .content {
+      margin-left: 250px;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+{% block footQCS %} {% include 'main/footQCS.html' %} {% endblock %}
+
+{% block sidebarQCS %} {% include 'main/sidebarQCS.html' %} {% endblock %}
+
+{% block bodyQCS %} {% include 'main/table_in_bodyQCS.html' %} {% endblock %}
+
+  <!-- Важно! Вставьте ссылки на библиотеки jQuery и Bootstrap JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
