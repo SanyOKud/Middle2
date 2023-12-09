@@ -19,6 +19,7 @@
       padding: 10px;
     }
   </style>
+<!-- {% for TableInTarget in TableInTargets %}  -->
 </head>
   <table>
     <thead>
@@ -29,56 +30,26 @@
         <th>Заголовок 4</th>
         <th>Заголовок 5</th>
         <th>Заголовок 6</th>
+        <th>Заголовок 7</th>
+        <th>Заголовок 8</th>
+        <th>Заголовок 9</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Ячейка 1</td>
-        <td>Ячейка 2</td>
-        <td>Ячейка 3</td>
-        <td>Ячейка 4</td>
-        <td>Ячейка 5</td>
-        <td>Ячейка 6</td>
-      </tr>
-      <tr>
-        <td>Ячейка 7</td>
-        <td>Ячейка 8</td>
-        <td>Ячейка 9</td>
-        <td>Ячейка 10</td>
-        <td>Ячейка 11</td>
-        <td>Ячейка 12</td>
-      </tr>
-      <tr>
-        <td>Ячейка 13</td>
-        <td>Ячейка 14</td>
-        <td>Ячейка 15</td>
-        <td>Ячейка 16</td>
-        <td>Ячейка 17</td>
-        <td>Ячейка 18</td>
-      </tr>
-      <tr>
-        <td>Ячейка 19</td>
-        <td>Ячейка 20</td>
-        <td>Ячейка 21</td>
-        <td>Ячейка 22</td>
-        <td>Ячейка 23</td>
-        <td>Ячейка 24</td>
-      </tr>
-      <tr>
-        <td>Ячейка 25</td>
-        <td>Ячейка 26</td>
-        <td>Ячейка 27</td>
-        <td>Ячейка 28</td>
-        <td>Ячейка 29</td>
-        <td>Ячейка 30</td>
-      </tr>
-      <tr>
-        <td>Ячейка 31</td>
-        <td>Ячейка 32</td>
-        <td>Ячейка 33</td>
-        <td>Ячейка 34</td>
-        <td>Ячейка 35</td>
-        <td>Ячейка 36</td>
+        <td>{{ TableInTarget.tt_number }}</td>
+        <td>{{ TableInTarget.MRF_name }}</td>
+        <td>{{ TableInTarget.cr_date_tt }}</td>
+        <td>{{ TableInTarget.name_verifiable }}</td>
+        <td>{{ TableInTarget.name_verifiable_sheff }}</td>
+        <td>{{ TableInTarget.division_verifiable }}</td>
+        <td>{{ TableInTarget.target_type }}</td>
+        <td>{{ TableInTarget.kk_result }}</td>
+        <td>  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Добавить</button>
+  </form> </td>
       </tr>
     </tbody>
   </table>

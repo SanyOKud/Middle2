@@ -1,9 +1,19 @@
 from django.shortcuts import render
-
 from django.http import HttpResponse
+from .models import TableInTarget
+from .forms import UserForm
 
-# from .models import User
 
+def TableInTarget_list(request):
+    TableInTargets = TableInTarget.objects.all()
+    form = UserForm()
+
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    return render(request, 'main/table_inQCS.html', {'TableInTargets': TableInTargets, 'form': form})
 
 def index(request):
     return render(request, 'main/indexQCS.html')
@@ -17,8 +27,8 @@ def team_info(request):
 def contact_info(request):
     return render(request, 'main/contactQCS.html')
 
-def table_in(request):
-    return render(request, 'main/table_inQCS.html')
+# def table_in(request):
+#     return render(request, 'main/table_inQCS.html')
 
 def table_out(request):
     return render(request, 'main/table_outQCS.html')
